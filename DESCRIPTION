@@ -1,0 +1,9 @@
+Package: tamahagane
+Type: Package
+Title: Development Tools for R
+Version: 0.1.0
+Author: Farhan Mubasher <farhanmubasher308@gmail.com>
+Maintainer: Farhan Mubasher <farhanmubasher308@gmail.com>
+Description: tamahagane package provides develoment tools to implement Basic and advance functions of R.
+License: xululabs
+LazyData: TRUE
