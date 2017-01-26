@@ -1,5 +1,6 @@
 
+
 tamahagne.read.csv <- function(file.path= ""){
 
-  read.csv(file.path, sep = ",", header = T)
+  return (toJSON( read.csv(file.path, sep = ",", header = T)))
 }
