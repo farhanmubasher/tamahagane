@@ -4,7 +4,6 @@ tamahagane.apply.filter<- function(Dataset, columNames, filterType, Values)
   cols<- fromJSON(columNames)
   converted.filterType <- fromJSON(filterType)
   converted.Values <- fromJSON(Values)
-  
   j<-1
   while(j<=length(converted.Values))
   {
@@ -13,7 +12,6 @@ tamahagane.apply.filter<- function(Dataset, columNames, filterType, Values)
       obj.start <- paste("^", converted.Values[j] , sep = "")
      obj.end <- paste(converted.Values[j] , "$", sep = "")
     }
-    
     j<- j+1
   }
   i<- 1
@@ -45,7 +43,6 @@ tamahagane.apply.filter<- function(Dataset, columNames, filterType, Values)
     }
     i<- i+1
   }
-  
   if(nrow(converted.Dataset)==0){
       
     return("No Records Found !!")
