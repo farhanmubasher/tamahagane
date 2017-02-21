@@ -1,14 +1,16 @@
-tamahagane.sort <- function(attribute, sortType="")
+tamahagane.sort <- function(Dataset, columName, sortType)
 {
-
+  Dataset <- fromJSON(Dataset)
+  columName <- fromJSON(columName)
+  sortType <- fromJSON(sortType)
   if(sortType=="ASC" || sortType=="")
   {
-    return (sort(attribute))
+    return (Dataset[order(Dataset[, columName]) ,])
   }
   else(sortType=="DESC")
   {
-    return (rev(sort(attribute)))
-
+    return (Dataset[rev(order(Dataset[, columName]))  ,])
+    
   }
-
+  
 }
