@@ -1,23 +1,25 @@
-tamahagane.apply.join<- function(x,y,joinType="")
-{
 
+tamahagane.apply.join<- function(x,y,joinType)
+{
+  x <- fromJSON(x)
+  y <- fromJSON(y)
+  joinType <- fromJSON(joinType)
+  
   if(joinType=="" || joinType== "inner")
   {
-    merge(x,y)
+    return(merge(x,y))
   }
   else if (joinType=="left")
   {
-    merge(x,y, all.x=TRUE)
-
+    return (merge(x,y, all.x=TRUE))
+    
   }
   else if (joinType=="right")
   {
-    merge(x,y, all.y= TRUE)
+    return (merge(x,y, all.y= TRUE))
   }
   else if(joinType== "outer")
   {
-    merge(x,y, all= TRUE)
+   return( merge(x,y, all= TRUE))
   }
-
-
 }
