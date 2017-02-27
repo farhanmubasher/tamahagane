@@ -11,8 +11,7 @@ tamahagane.apply.join<- function(x,y,joinType)
   }
   else if (joinType=="left")
   {
-    return (merge(x,y, all.x=TRUE))
-    
+    return (merge(x,y, all.x=TRUE)) 
   }
   else if (joinType=="right")
   {
