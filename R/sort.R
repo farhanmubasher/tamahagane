@@ -1,7 +1,7 @@
 library(jsonlite)
 library(lubridate)
 
-tamahagane.sort.Date <- function(Dataset, columName, sortType)
+tamahagane.sort <- function(Dataset, columName, sortType)
 {
   Dataset <- fromJSON(Dataset)
   columName <- fromJSON(columName)
