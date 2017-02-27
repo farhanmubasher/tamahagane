@@ -21,7 +21,6 @@ tamahagane.sort <- function(Dataset, columName, sortType)
     }
     else
     {
-      
       if(sortType=="ASC" || sortType=="")
       {
         return (Dataset[order(Dataset[, columName]) ,])
@@ -30,11 +29,7 @@ tamahagane.sort <- function(Dataset, columName, sortType)
       {
         return (Dataset[rev(order(Dataset[, columName]))  ,])
       }
-        
-      }
-    
   }
-  
   else if (is.null(check) || check== FALSE){
     
     if(sortType=="ASC" || sortType=="")
