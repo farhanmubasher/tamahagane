@@ -1,7 +1,7 @@
 library(jsonlite)
 library(lubridate)
 
-tamahagane.sort <- function(Dataset, columName, sortType)
+tamahagane.sort.Date <- function(Dataset, columName, sortType)
 {
   Dataset <- fromJSON(Dataset)
   columName <- fromJSON(columName)
@@ -10,7 +10,6 @@ tamahagane.sort <- function(Dataset, columName, sortType)
   check  <- tryCatch({
     !all(is.na(as.Date(Dataset[, columName],format="%d/%m/%Y")))
   }, error=function(e){NULL})
-
   if(!is.null(check) && check!= FALSE)
   {
     Dataset[columName] <- dmy(Dataset[, columName])
@@ -21,6 +20,7 @@ tamahagane.sort <- function(Dataset, columName, sortType)
     }
     else
     {
+      
       if(sortType=="ASC" || sortType=="")
       {
         return (Dataset[order(Dataset[, columName]) ,])
@@ -29,7 +29,10 @@ tamahagane.sort <- function(Dataset, columName, sortType)
       {
         return (Dataset[rev(order(Dataset[, columName]))  ,])
       }
+        
+      } 
   }
+  
   else if (is.null(check) || check== FALSE){
     
     if(sortType=="ASC" || sortType=="")
@@ -40,5 +43,5 @@ tamahagane.sort <- function(Dataset, columName, sortType)
     {
       return (Dataset[rev(order(Dataset[, columName]))  ,])
     }
-  }  
+  } 
 }
