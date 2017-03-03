@@ -1,24 +1,14 @@
-
+library(plyr)
 tamahagane.apply.join<- function(x,y,joinType)
 {
   x <- fromJSON(x)
   y <- fromJSON(y)
   joinType <- fromJSON(joinType)
-  
-  if(joinType=="" || joinType== "inner")
-  {
-    return(merge(x,y))
+  result <- join(x, y, type= joinType)
+  if(nrow(result) == 0){
+      return("No Records Found !!")
   }
-  else if (joinType=="left")
-  {
-    return (merge(x,y, all.x=TRUE)) 
-  }
-  else if (joinType=="right")
-  {
-    return (merge(x,y, all.y= TRUE))
-  }
-  else if(joinType== "outer")
-  {
-   return( merge(x,y, all= TRUE))
+  else{
+    return(result)
   }
 }
