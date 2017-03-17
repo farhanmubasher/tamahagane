@@ -1,9 +1,9 @@
 library(jsonlite)
 library(lubridate)
 
-tamahagane.sort <- function(Dataset, columName, sortType)
+tamahagane.sort <- function(filePath, columName, sortType)
 {
-  Dataset <- fromJSON(Dataset)
+  Dataset <- fromJSON(filePath)
   columName <- fromJSON(columName)
   sortType <- fromJSON(sortType)
   
