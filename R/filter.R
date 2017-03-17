@@ -1,6 +1,6 @@
-tamahagane.apply.filter<- function(Dataset, columNames, filterType, Values)
+tamahagane.apply.filter<- function(filePath, columNames, filterType, Values)
 {
-  converted.Dataset <- fromJSON(Dataset)
+  converted.Dataset <- fromJSON(filePath)
   cols<- fromJSON(columNames)
   converted.filterType <- fromJSON(filterType)
   converted.Values <- fromJSON(Values)
