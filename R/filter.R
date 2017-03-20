@@ -1,4 +1,3 @@
-#test
 tamahagane.apply.filter<- function(filePath, columNames, filterType, Values)
 {
   converted.Dataset <- fromJSON(filePath)
